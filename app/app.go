@@ -1,4 +1,4 @@
-package cmd
+package app
 
 import (
 	"context"
@@ -10,6 +10,7 @@ import (
 	"github.com/ArjunMalhotra/config"
 	"github.com/ArjunMalhotra/internal/server"
 	"github.com/ArjunMalhotra/pkg/db"
+	"github.com/ArjunMalhotra/pkg/http"
 	"github.com/ArjunMalhotra/pkg/logger"
 )
 
@@ -20,14 +21,18 @@ func Start() {
 	cfg := config.NewConfig()
 	// logger
 	log, _ := logger.NewLogger(cfg)
+	app := http.NewApp(log)
 	// mysql db
 	db, err := db.NewMysqDB(cfg)
 	if err != nil {
 		log.Logger.Errorf("Failed to load db object")
 		os.Exit(1)
 	}
+	if err := db.Migrate(); err != nil {
+		log.Logger.Fatalf("Error trying to migrate: %v", err)
+	}
 	// http API server based on fiber
-	server := server.NewServer(log, db.DB, cfg)
+	server := server.NewHTTP(cfg, app, log)
 	// Register all APP APIs
 	server.RegisterRoutes()
 

@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/ArjunMalhotra/config"
+	"github.com/ArjunMalhotra/internal/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
@@ -31,7 +32,6 @@ func NewMysqDB(cfg *config.Config) (*MysqlDB, error) {
 		PrepareStmt:                              true,
 		DisableForeignKeyConstraintWhenMigrating: true,
 		SkipDefaultTransaction:                   true, // Disable automatic transactions for read-only operations
-
 		NamingStrategy: schema.NamingStrategy{
 			TablePrefix:   "admetric_",
 			SingularTable: true,
@@ -59,7 +59,9 @@ func NewMysqDB(cfg *config.Config) (*MysqlDB, error) {
 	return dbc, nil
 }
 
-// Migrate when you change your model, called from main only
 func (db *MysqlDB) Migrate() error {
+	if err := db.DB.AutoMigrate(&model.Ad{}, &model.Click{}); err != nil {
+		return err
+	}
 	return nil
 }

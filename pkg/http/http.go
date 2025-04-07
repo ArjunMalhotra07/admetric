@@ -26,16 +26,11 @@ func NewApp(log *logger.Logger) *App {
 }
 
 type HttpResponse struct {
-	// Response flag indicates whether the HTTP request was successful or not
-	Success bool `json:"success"`
-	// Http status Code
-	Code int `json:"code"`
-	// if the request were successful the data will be saved here
-	Data interface{} `json:"data"`
-	// Generic General Error Message defined in the system
-	Error string `json:"error"`
-	// More detailed error message indicates why the request was unsuccessful
-	Message string `json:"message"`
+	Success bool        `json:"success"`
+	Code    int         `json:"code"`
+	Data    interface{} `json:"data"`
+	Error   string      `json:"error"`
+	Message string      `json:"message"`
 }
 
 const (
