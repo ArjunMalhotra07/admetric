@@ -8,28 +8,54 @@ import (
 	"syscall"
 
 	"github.com/ArjunMalhotra/config"
+	"github.com/ArjunMalhotra/internal/repo"
 	"github.com/ArjunMalhotra/internal/server"
 	"github.com/ArjunMalhotra/pkg/db"
 	"github.com/ArjunMalhotra/pkg/http"
 	"github.com/ArjunMalhotra/pkg/logger"
+	"github.com/go-redis/redis"
 )
 
 func Start() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	// config
+	//! config
 	cfg := config.NewConfig()
-	// logger
+	//! logger
 	log, _ := logger.NewLogger(cfg)
 	app := http.NewApp(log)
-	// mysql db
+	//! mysql db
 	db, err := db.NewMysqDB(cfg)
 	if err != nil {
 		log.Logger.Errorf("Failed to load db object")
-		os.Exit(1)
+		return
 	}
 	if err := db.Migrate(); err != nil {
 		log.Logger.Fatalf("Error trying to migrate: %v", err)
+		return
+	}
+	//! Count ads
+	adRepo := repo.NewAdRepository(db.DB)
+	count, err := adRepo.CountAds()
+	if err != nil {
+		log.Logger.Error("Failed to count adds ", err)
+		return
+	}
+	if count == 0 {
+		if err := db.Seed(); err != nil {
+			log.Logger.Error(err)
+			return
+		} else {
+			log.Logger.Info("Successfully seeded data")
+		}
+	}
+	//! Redis
+	redisClient := redis.NewClient(&redis.Options{
+		Addr: cfg.Redis.Url,
+	})
+	if _, err := redisClient.Ping().Result(); err != nil {
+		log.Logger.Error("Failed to connect to redis ->  ", err)
+		return
 	}
 	// http API server based on fiber
 	server := server.NewHTTP(cfg, app, log)
@@ -38,7 +64,7 @@ func Start() {
 
 	//! start http server
 	go func() {
-		err := server.App.Listen(cfg.Http.BaseUrl + cfg.Http.Host + cfg.Http.Port)
+		err := server.App.Listen(cfg.Http.Host + cfg.Http.Port)
 		if err != nil {
 			log.Logger.Fatalf("Error trying to listenning on port %s: %v", cfg.Http.Port, err)
 		}

@@ -1,46 +1,33 @@
 package repo
 
 import (
-	"database/sql"
 	"log"
 
 	"github.com/ArjunMalhotra/internal/model"
+	"gorm.io/gorm"
 )
 
 type AdRepo struct {
-	db *sql.DB
+	db *gorm.DB
 }
 
-func NewAdRepository(db *sql.DB) *AdRepo {
+func NewAdRepository(db *gorm.DB) *AdRepo {
 	return &AdRepo{db: db}
 }
 
 func (r *AdRepo) FetchAll() ([]model.Ad, error) {
-	query := `SELECT * FROM ads`
-	rows, err := r.db.Query(query)
-	if err != nil {
-		return nil, err
-	}
-	defer rows.Close()
-
 	var ads []model.Ad
-	for rows.Next() {
-		var ad model.Ad
-		if err := rows.Scan(&ad.ID, &ad.ImageURL, &ad.TargetURL); err != nil {
-			return nil, err
-		}
-		ads = append(ads, ad)
+	if err := r.db.Find(&ads).Error; err != nil {
+		return nil, err
 	}
 	return ads, nil
 }
 
 func (r *AdRepo) CountAds() (int, error) {
-	var count int
-	query := `SELECT COUNT(*) FROM ads`
-	err := r.db.QueryRow(query).Scan(&count)
-	if err != nil {
+	var count int64
+	if err := r.db.Model(&model.Ad{}).Count(&count).Error; err != nil {
 		log.Printf("Failed to count ads: %v", err)
 		return 0, err
 	}
-	return count, nil
+	return int(count), nil
 }

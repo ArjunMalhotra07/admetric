@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "image_url": "https://example.com/images/ad1.jpg",
+    "target_url": "https://example.com/landing/ad1"
+  },
+  {
+    "id": "2",
+    "image_url": "https://example.com/images/ad2.jpg",
+    "target_url": "https://example.com/landing/ad2"
+  },
+  {
+    "id": "3",
+    "image_url": "https://example.com/images/ad3.jpg",
+    "target_url": "https://example.com/landing/ad3"
+  },
+  {
+    "id": "4",
+    "image_url": "https://example.com/images/ad4.jpg",
+    "target_url": "https://example.com/landing/ad4"
+  },
+  {
+    "id": "5",
+    "image_url": "https://example.com/images/ad5.jpg",
+    "target_url": "https://example.com/landing/ad5"
+  },
+  {
+    "id": "6",
+    "image_url": "https://example.com/images/ad6.jpg",
+    "target_url": "https://example.com/landing/ad6"
+  },
+  {
+    "id": "7",
+    "image_url": "https://example.com/images/ad7.jpg",
+    "target_url": "https://example.com/landing/ad7"
+  },
+  {
+    "id": "8",
+    "image_url": "https://example.com/images/ad8.jpg",
+    "target_url": "https://example.com/landing/ad8"
+  },
+  {
+    "id": "9",
+    "image_url": "https://example.com/images/ad9.jpg",
+    "target_url": "https://example.com/landing/ad9"
+  },
+  {
+    "id": "10",
+    "image_url": "https://example.com/images/ad10.jpg",
+    "target_url": "https://example.com/landing/ad10"
+  }
+]

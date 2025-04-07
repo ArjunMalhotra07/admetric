@@ -9,9 +9,11 @@ const (
 	//!
 	HTTP_HOST     = "HTTP_HOST"
 	HTTP_PORT     = "HTTP_PORT"
-	HTTP_BASE_URL = "HTTP_BASE_URL"
+	HTTP_BASE_URL = "BASE_URL"
 	//!
 	LOGS_FILE = "LOG_FILE"
+	//!
+	REDIS_URL = "REDIS_URL"
 	//!
 	MYSQL_HOST     = "MYSQL_HOST"
 	MYSQL_PORT     = "MYSQL_PORT"
@@ -22,8 +24,9 @@ const (
 
 type Config struct {
 	Http   Http
-	MySQL  MySQL
 	Logger Logger
+	Redis  Redis
+	MySQL  MySQL
 }
 
 type Http struct {
@@ -32,20 +35,22 @@ type Http struct {
 	Port    string
 }
 
-type MySQL struct {
-	MysqlHost     string
-	MysqlPort     string
-	MysqlUser     string
-	MysqlPassword string
-	MysqlDBName   string
-}
-
 type Logger struct {
 	DisableCaller     bool
 	DisableStacktrace bool
 	Encoding          string
 	Level             string
 	LogFile           string
+}
+type Redis struct {
+	Url string
+}
+type MySQL struct {
+	MysqlHost     string
+	MysqlPort     string
+	MysqlUser     string
+	MysqlPassword string
+	MysqlDBName   string
 }
 
 func NewConfig() *Config {
@@ -64,6 +69,8 @@ func NewConfig() *Config {
 		HTTP_BASE_URL: "",
 		//!
 		LOGS_FILE: "",
+		//!
+		REDIS_URL: "",
 		//!
 		MYSQL_HOST:     "",
 		MYSQL_PORT:     "",
@@ -92,6 +99,12 @@ func NewConfig() *Config {
 	if logsFile != "" {
 		c.Logger.LogFile = logsFile
 		parseError[LOGS_FILE] = logsFile
+	}
+	//! Redi configs
+	redisUrl := os.Getenv(REDIS_URL)
+	if redisUrl != "" {
+		c.Redis.Url = redisUrl
+		parseError[REDIS_URL] = redisUrl
 	}
 	//! mysql configs
 	mysqlHost := os.Getenv(MYSQL_HOST)

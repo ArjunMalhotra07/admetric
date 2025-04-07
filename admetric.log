@@ -1,0 +1,13 @@
+{"level":"error","ts":1744016893.098736,"msg":"Failed to load db object"}
+{"level":"error","ts":1744016941.732,"msg":"Failed to load db object"}
+{"level":"error","ts":1744016947.691854,"msg":"Failed to load db object"}
+{"level":"error","ts":1744017078.630045,"msg":"Failed to load db object"}
+{"level":"error","ts":1744017121.464698,"msg":"Failed to load db object"}
+{"level":"error","ts":1744017140.36556,"msg":"Failed to load db object"}
+{"level":"error","ts":1744017620.072938,"msg":"Failed to load db object"}
+{"level":"error","ts":1744018366.7930849,"msg":"Failed to load db object"}
+{"level":"error","ts":1744018391.3388531,"msg":"Failed to seed"}
+{"level":"error","ts":1744018438.296155,"msg":"Failed to load ads from json file : open ads.json: no such file or directory"}
+{"level":"error","ts":1744018493.568209,"msg":"failed to commit transaction: %!w(*gorm.DB=&{0x1400026d200 <nil> 0 0x14000275340 1})"}
+{"level":"error","ts":1744018632.7502909,"msg":"Failed to connect to redis ->  dial tcp: lookup redis: no such host"}
+{"level":"fatal","ts":1744018710.856672,"msg":"Error trying to listenning on port 8888: failed to listen: listen tcp4: address http://localhost:8888: too many colons in address"}

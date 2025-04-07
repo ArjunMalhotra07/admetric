@@ -1,7 +1,9 @@
 package db
 
 import (
+	"encoding/json"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/ArjunMalhotra/config"
@@ -11,7 +13,10 @@ import (
 	"gorm.io/gorm/schema"
 )
 
-// MysqlDB instant to pass to handlers
+const (
+	ADS_PATH = "./assets/ads.json"
+)
+
 type MysqlDB struct {
 	DB *gorm.DB
 }
@@ -62,6 +67,32 @@ func NewMysqDB(cfg *config.Config) (*MysqlDB, error) {
 func (db *MysqlDB) Migrate() error {
 	if err := db.DB.AutoMigrate(&model.Ad{}, &model.Click{}); err != nil {
 		return err
+	}
+	return nil
+}
+
+func (db *MysqlDB) Seed() error {
+	data, err := os.ReadFile(ADS_PATH)
+	if err != nil {
+		return fmt.Errorf("Failed to load ads from json file : %w", err)
+	}
+	var ads []model.Ad
+	if err := json.Unmarshal(data, &ads); err != nil {
+		return fmt.Errorf("failed to parse JSON: %w", err)
+	}
+	tx := db.DB.Begin()
+	defer func() {
+		if r := recover(); r != nil {
+			tx.Rollback()
+		}
+	}()
+	//! seed
+	if err := tx.Create(&ads).Error; err != nil {
+		tx.Rollback()
+		return fmt.Errorf("failed to seed data -> ", err)
+	}
+	if err := tx.Commit().Error; err != nil {
+		return fmt.Errorf("failed to commit transaction -> ", err)
 	}
 	return nil
 }
