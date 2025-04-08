@@ -30,9 +30,7 @@ func NewMysqDB(cfg *config.Config) (*MysqlDB, error) {
 		cfg.MySQL.MysqlPort,
 		cfg.MySQL.MysqlDBName,
 	)
-
 	fmt.Println("DNS", dns)
-
 	db, err := gorm.Open(mysql.Open(dns), &gorm.Config{
 		PrepareStmt:                              true,
 		DisableForeignKeyConstraintWhenMigrating: true,

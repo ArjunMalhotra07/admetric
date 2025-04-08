@@ -2,7 +2,6 @@ package repo
 
 import (
 	"log"
-	"net"
 	"time"
 
 	"github.com/ArjunMalhotra/internal/model"
@@ -10,11 +9,15 @@ import (
 )
 
 type ClickRepo struct {
-	db *gorm.DB
+	DB *gorm.DB
+}
+
+func NewClickRepo(db *gorm.DB) *ClickRepo {
+	return &ClickRepo{DB: db}
 }
 
 func (r *ClickRepo) Save(click model.Click) error {
-	if err := r.db.Create(&click).Error; err != nil {
+	if err := r.DB.Create(&click).Error; err != nil {
 		log.Printf("Failed to save click event: %v", err)
 		return err
 	}
@@ -23,7 +26,7 @@ func (r *ClickRepo) Save(click model.Click) error {
 
 func (r *ClickRepo) AdExists(adID string) (bool, error) {
 	var exists bool
-	err := r.db.Model(&model.Ad{}).
+	err := r.DB.Model(&model.Ad{}).
 		Select("count(?) > 0").
 		Where("id = ?", adID).
 		Scan(&exists).Error
@@ -37,17 +40,9 @@ func (r *ClickRepo) AdExists(adID string) (bool, error) {
 func (r *ClickRepo) GetClickCountByIP(ip string) (int, error) {
 	var count int64
 	oneHourAgo := time.Now().Add(-1 * time.Hour)
-	err := r.db.Model(&model.Click{}).Where("ip = ? AND timestamp > ?", ip, oneHourAgo).Count(&count).Error
+	err := r.DB.Model(&model.Click{}).Where("ip = ? AND timestamp > ?", ip, oneHourAgo).Count(&count).Error
 	if err != nil {
 		return 0, err
 	}
 	return int(count), nil
-}
-
-func (r *ClickRepo) IsValidIP(ip string) bool {
-	return net.ParseIP(ip) != nil
-}
-
-func (r *ClickRepo) IsPlaybackTimeValid(playbackTime int) bool {
-	return playbackTime > 0
 }

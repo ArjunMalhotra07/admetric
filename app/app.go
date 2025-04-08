@@ -10,6 +10,7 @@ import (
 	"github.com/ArjunMalhotra/config"
 	"github.com/ArjunMalhotra/internal/repo"
 	"github.com/ArjunMalhotra/internal/server"
+	"github.com/ArjunMalhotra/internal/services"
 	"github.com/ArjunMalhotra/pkg/db"
 	"github.com/ArjunMalhotra/pkg/http"
 	"github.com/ArjunMalhotra/pkg/logger"
@@ -57,8 +58,12 @@ func Start() {
 		log.Logger.Error("Failed to connect to redis ->  ", err)
 		return
 	}
+	clickRepo := repo.NewClickRepo(db.DB)
+	metricsRepo := repo.NewMetricsRepo(redisClient)
+	clickService := services.NewClickService(clickRepo, metricsRepo, log)
+	adService := services.NewAdService(adRepo)
 	// http API server based on fiber
-	server := server.NewHTTP(cfg, app, log)
+	server := server.NewHTTP(cfg, app, log, adService, clickService)
 	// Register all APP APIs
 	server.RegisterRoutes()
 

@@ -7,12 +7,16 @@ import (
 )
 
 type MetricsRepo struct {
-	redisClient *redis.Client
+	RedisClient *redis.Client
+}
+
+func NewMetricsRepo(redis *redis.Client) *MetricsRepo {
+	return &MetricsRepo{RedisClient: redis}
 }
 
 func (r *MetricsRepo) IncrementClickCount(adID string) error {
 	key := "clicks:" + adID
-	if err := r.redisClient.Incr(key).Err(); err != nil {
+	if err := r.RedisClient.Incr(key).Err(); err != nil {
 		log.Printf("Failed to increment click count: %v", err)
 		return err
 	}
@@ -21,7 +25,7 @@ func (r *MetricsRepo) IncrementClickCount(adID string) error {
 
 func (r *MetricsRepo) GetClickCount(adID string) (int64, error) {
 	key := "clicks:" + adID
-	count, err := r.redisClient.Get(key).Int64()
+	count, err := r.RedisClient.Get(key).Int64()
 	if err != nil {
 		if err == redis.Nil {
 			return 0, nil
