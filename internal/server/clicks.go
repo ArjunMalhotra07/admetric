@@ -6,6 +6,7 @@ import (
 	"github.com/ArjunMalhotra/internal/model"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
+	"gorm.io/gorm"
 )
 
 func (s *HttpServer) handleRecordClick(c *fiber.Ctx) error {
@@ -49,23 +50,14 @@ func (s *HttpServer) handleGetClickCount(c *fiber.Ctx) error {
 		})
 	}
 
-	// First check if ad exists
-	exists, err := s.ClickService.AdExists(adID)
-	if err != nil {
-		s.Log.Logger.Errorf("Failed to check if ad exists: %v", err)
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-			"error": "Internal server error",
-		})
-	}
-	if !exists {
-		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
-			"error": "Ad not found",
-		})
-	}
-
-	// Get click count from in-memory counter or database
+	// First try to get click count (will check in-memory first, then DB)
 	count, err := s.ClickService.GetClickCount(adID)
 	if err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				"error": "Ad not found",
+			})
+		}
 		s.Log.Logger.Errorf("Failed to get click count: %v", err)
 		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
 			"error": "Internal server error",
