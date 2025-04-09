@@ -9,6 +9,7 @@ import (
 	"github.com/ArjunMalhotra/internal/repo"
 	"github.com/ArjunMalhotra/pkg/circuitbreaker"
 	"github.com/ArjunMalhotra/pkg/logger"
+	"gorm.io/gorm"
 )
 
 const (
@@ -149,4 +150,69 @@ func (s *ClickService) GetClickCount(adID string) (int64, error) {
 
 func (s *ClickService) AdExists(adID string) (bool, error) {
 	return s.clickRepo.AdExists(adID)
+}
+
+// ParseTimeFrame parses a timeframe string in the format "int+unit" (e.g., "37m", "7h", "3d")
+func (s *ClickService) ParseTimeFrame(timeFrame string) (time.Duration, error) {
+	if timeFrame == "" {
+		return 1 * time.Hour, nil // Default to 1 hour
+	}
+
+	var value int
+	var unit string
+
+	// Extract numeric value and unit
+	for i, c := range timeFrame {
+		if c >= '0' && c <= '9' {
+			continue
+		}
+		value = 0
+		for j := 0; j < i; j++ {
+			value = value*10 + int(timeFrame[j]-'0')
+		}
+		unit = timeFrame[i:]
+		break
+	}
+
+	if value == 0 {
+		return 0, fmt.Errorf("invalid time frame format: %s", timeFrame)
+	}
+
+	// Convert to duration based on unit
+	switch unit {
+	case "m":
+		return time.Duration(value) * time.Minute, nil
+	case "h":
+		return time.Duration(value) * time.Hour, nil
+	case "d":
+		return time.Duration(value) * 24 * time.Hour, nil
+	default:
+		return 0, fmt.Errorf("invalid time unit: %s", unit)
+	}
+}
+
+// GetClickCountByTimeFrame gets the click count for an ad within a specific time frame
+func (s *ClickService) GetClickCountByTimeFrame(adID string, timeFrame string) (int64, error) {
+	// First check if ad exists
+	exists, err := s.AdExists(adID)
+	if err != nil {
+		return 0, err
+	}
+	if !exists {
+		return 0, gorm.ErrRecordNotFound
+	}
+
+	// Parse the time frame
+	duration, err := s.ParseTimeFrame(timeFrame)
+	if err != nil {
+		return 0, err
+	}
+
+	// Get click count from database
+	count, err := s.clickRepo.GetClickCountByTimeFrame(adID, duration)
+	if err != nil {
+		return 0, err
+	}
+
+	return count, nil
 }

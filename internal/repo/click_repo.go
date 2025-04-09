@@ -49,6 +49,21 @@ func (r *ClickRepo) GetAdTotalClicks(adID string) (int, error) {
 	return ad.TotalClicks, nil
 }
 
+func (r *ClickRepo) GetClickCountByTimeFrame(adID string, timeFrame time.Duration) (int64, error) {
+	var count int64
+	timeAgo := time.Now().Add(-timeFrame)
+
+	err := r.DB.Model(&model.Click{}).
+		Where("ad_id = ? AND timestamp > ?", adID, timeAgo).
+		Count(&count).Error
+
+	if err != nil {
+		return 0, err
+	}
+
+	return count, nil
+}
+
 func (r *ClickRepo) AdExists(adID string) (bool, error) {
 	var exists bool
 	err := r.DB.Model(&model.Ad{}).

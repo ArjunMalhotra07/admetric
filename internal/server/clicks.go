@@ -69,3 +69,35 @@ func (s *HttpServer) handleGetClickCount(c *fiber.Ctx) error {
 		"total_clicks": count,
 	})
 }
+
+func (s *HttpServer) handleGetClickAnalytics(c *fiber.Ctx) error {
+	adID := c.Params("id")
+	if adID == "" {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Ad ID is required",
+		})
+	}
+
+	// Get time frame from query parameter
+	timeFrame := c.Query("timeframe", "1h") // Default to 1 hour if not specified
+
+	// Get click count by time frame
+	count, err := s.ClickService.GetClickCountByTimeFrame(adID, timeFrame)
+	if err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				"error": "Ad not found",
+			})
+		}
+		s.Log.Logger.Errorf("Failed to get click analytics: %v", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Internal server error",
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"ad_id":     adID,
+		"timeframe": timeFrame,
+		"clicks":    count,
+	})
+}
