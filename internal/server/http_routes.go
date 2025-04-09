@@ -10,6 +10,4 @@ func (s *HttpServer) RegisterHttpRoutes() {
 	api.Get("/:id/clicks", s.handleGetClickCount)
 	// GET /ads/:id/analytics
 	api.Get("/:id/analytics", s.handleGetClickAnalytics)
-	// GET /ads/analytics
-	// api.Get("/analytics", s.GetAnalytics)
 }
