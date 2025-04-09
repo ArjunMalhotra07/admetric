@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"time"
 
 	"github.com/ArjunMalhotra/internal/model"
 	"github.com/Shopify/sarama"
@@ -13,6 +14,8 @@ import (
 
 const (
 	clickTopic = "ad-clicks"
+	maxRetries = 5
+	retryDelay = 2 * time.Second
 )
 
 type KafkaService struct {
@@ -26,15 +29,34 @@ func NewKafkaService(brokers []string) (*KafkaService, error) {
 	config := sarama.NewConfig()
 	config.Producer.Return.Successes = true
 	config.Producer.RequiredAcks = sarama.WaitForAll
-	config.Producer.Retry.Max = 5
+	config.Producer.Retry.Max = maxRetries
+	config.Producer.Retry.Backoff = retryDelay
 
-	producer, err := sarama.NewSyncProducer(brokers, config)
+	// Add timeout settings
+	config.Net.DialTimeout = 10 * time.Second
+	config.Net.ReadTimeout = 10 * time.Second
+	config.Net.WriteTimeout = 10 * time.Second
+
+	// Try to connect with retries
+	var producer sarama.SyncProducer
+	var err error
+
+	for i := 0; i < maxRetries; i++ {
+		producer, err = sarama.NewSyncProducer(brokers, config)
+		if err == nil {
+			break
+		}
+		log.Printf("Failed to connect to Kafka (attempt %d/%d): %v", i+1, maxRetries, err)
+		time.Sleep(retryDelay)
+	}
+
 	if err != nil {
-		return nil, fmt.Errorf("failed to create producer: %v", err)
+		return nil, fmt.Errorf("failed to create producer after %d attempts: %v", maxRetries, err)
 	}
 
 	consumer, err := sarama.NewConsumer(brokers, nil)
 	if err != nil {
+		producer.Close()
 		return nil, fmt.Errorf("failed to create consumer: %v", err)
 	}
 
@@ -64,6 +86,21 @@ func (s *KafkaService) PublishClick(click model.Click) error {
 }
 
 func (s *KafkaService) StartConsumer(clickService *ClickService) error {
+	// Create topic if it doesn't exist
+	admin, err := sarama.NewClusterAdmin(s.brokers, nil)
+	if err != nil {
+		log.Printf("Warning: Could not create Kafka admin client: %v", err)
+	} else {
+		err = admin.CreateTopic(clickTopic, &sarama.TopicDetail{
+			NumPartitions:     1,
+			ReplicationFactor: 1,
+		}, false)
+		if err != nil && err != sarama.ErrTopicAlreadyExists {
+			log.Printf("Warning: Could not create topic: %v", err)
+		}
+		admin.Close()
+	}
+
 	partitionConsumer, err := s.consumer.ConsumePartition(clickTopic, 0, sarama.OffsetNewest)
 	if err != nil {
 		return fmt.Errorf("failed to create partition consumer: %v", err)

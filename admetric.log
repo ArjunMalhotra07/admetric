@@ -11,3 +11,9 @@
 {"level":"error","ts":1744018493.568209,"msg":"failed to commit transaction: %!w(*gorm.DB=&{0x1400026d200 <nil> 0 0x14000275340 1})"}
 {"level":"error","ts":1744018632.7502909,"msg":"Failed to connect to redis ->  dial tcp: lookup redis: no such host"}
 {"level":"fatal","ts":1744018710.856672,"msg":"Error trying to listenning on port 8888: failed to listen: listen tcp4: address http://localhost:8888: too many colons in address"}
+{"level":"error","ts":1744225993.1077702,"msg":"Failed to load db object"}
+{"level":"error","ts":1744226334.55686,"msg":"Failed to initialize Kafka: failed to create producer: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744226411.255431,"msg":"Failed to initialize Kafka: failed to create producer: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744226835.84071,"msg":"Failed to initialize Kafka: failed to create producer: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744227174.8471181,"msg":"Failed to initialize Kafka: failed to create producer: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744227491.747645,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}

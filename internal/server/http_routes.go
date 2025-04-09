@@ -7,5 +7,5 @@ func (s *HttpServer) RegisterHttpRoutes() {
 	// POST /ads/click
 	api.Post("/click", s.handleRecordClick)
 	// GET /ads/analytics
-	api.Get("/analytics", s.GetAnalytics)
+	// api.Get("/analytics", s.GetAnalytics)
 }

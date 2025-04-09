@@ -1,55 +1,12 @@
-.PHONY: build run test clean docker-build docker-run compose
-
-# Go parameters
-GOCMD=go
-GOBUILD=$(GOCMD) build
-GOCLEAN=$(GOCMD) clean
-GOTEST=$(GOCMD) test
-GOGET=$(GOCMD) get
-BINARY_NAME=admetric
-BINARY_UNIX=$(BINARY_NAME)_unix
-
-# Docker parameters
-DOCKER_IMAGE=admetric
-DOCKER_TAG=latest
-
-all: test build
-
-build:
-	$(GOBUILD) -o $(BINARY_NAME) -v ./cmd/main.go
-
-run: compose
-	$(GOBUILD) -o $(BINARY_NAME) -v ./cmd/main.go
-	./$(BINARY_NAME)
-
-test:
-	$(GOTEST) -v ./...
-
-clean:
-	$(GOCLEAN)
-	rm -f $(BINARY_NAME)
-	rm -f $(BINARY_UNIX)
-	docker-compose down -v
-	rm -f admetric.log
-
-docker-build:
-	docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
-
-docker-run:
-	docker run -p 8080:8080 $(DOCKER_IMAGE):$(DOCKER_TAG)
-
-docker-compose-up:
-	docker-compose up -d
-
-docker-compose-down:
-	docker-compose down
+run:
+	@go run ./cmd/main.go
 
 compose:
-	docker-compose down -v
-	docker-compose up -d
+	@docker compose up --build
 
-lint:
-	golangci-lint run
+remove:
+	@docker stop $$(docker ps -q) 2>/dev/null || true
+	@docker rm -f $$(docker ps -aq) 2>/dev/null || true
 
-deps:
-	$(GOGET) -v -t -d ./...
+stack:
+	@docker compose -f stack-compose.yml up --build

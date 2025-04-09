@@ -3,7 +3,6 @@ package config
 import (
 	"fmt"
 	"os"
-	"strconv"
 )
 
 const (
@@ -12,9 +11,9 @@ const (
 	HTTP_PORT     = "HTTP_PORT"
 	HTTP_BASE_URL = "BASE_URL"
 	//!
-	LOGS_FILE = "LOG_FILE"
+	LOG_FILE = "LOG_FILE"
 	//!
-	REDIS_URL = "REDIS_URL"
+	KAFKA_BROKER = "KAFKA_BROKER"
 	//!
 	MYSQL_HOST     = "MYSQL_HOST"
 	MYSQL_PORT     = "MYSQL_PORT"
@@ -24,11 +23,10 @@ const (
 )
 
 type Config struct {
-	MySQL  MySQLConfig
-	Redis  RedisConfig
 	Http   HttpConfig
 	Logger LoggerConfig
 	Kafka  KafkaConfig
+	MySQL  MySQLConfig
 }
 
 type MySQLConfig struct {
@@ -37,10 +35,6 @@ type MySQLConfig struct {
 	MysqlUser     string
 	MysqlPassword string
 	MysqlDBName   string
-}
-
-type RedisConfig struct {
-	Url string
 }
 
 type HttpConfig struct {
@@ -58,25 +52,22 @@ type KafkaConfig struct {
 
 func NewConfig() *Config {
 	return &Config{
-		MySQL: MySQLConfig{
-			MysqlHost:     getEnv("MYSQL_HOST", "localhost"),
-			MysqlPort:     getEnv("MYSQL_PORT", "3306"),
-			MysqlUser:     getEnv("MYSQL_USER", "root"),
-			MysqlPassword: getEnv("MYSQL_PASSWORD", ""),
-			MysqlDBName:   getEnv("MYSQL_DB", "admetric"),
-		},
-		Redis: RedisConfig{
-			Url: getEnv("REDIS_URL", "localhost:6379"),
-		},
 		Http: HttpConfig{
-			Host: getEnv("HTTP_HOST", "localhost"),
-			Port: getEnv("HTTP_PORT", ":8080"),
+			Host: getEnv(HTTP_HOST, "localhost"),
+			Port: getEnv(HTTP_PORT, ":8080"),
 		},
 		Logger: LoggerConfig{
-			LogFile: getEnv("LOG_FILE", "admetric.log"),
+			LogFile: getEnv(LOG_FILE, "admetric.log"),
 		},
 		Kafka: KafkaConfig{
-			Brokers: []string{getEnv("KAFKA_BROKER", "localhost:9092")},
+			Brokers: []string{getEnv(KAFKA_BROKER, "localhost:9092")},
+		},
+		MySQL: MySQLConfig{
+			MysqlHost:     getEnv(MYSQL_HOST, "localhost"),
+			MysqlPort:     getEnv(MYSQL_PORT, "3306"),
+			MysqlUser:     getEnv(MYSQL_USER, "root"),
+			MysqlPassword: getEnv(MYSQL_PASSWORD, ""),
+			MysqlDBName:   getEnv(MYSQL_DB, "admetric"),
 		},
 	}
 }
@@ -88,17 +79,6 @@ func getEnv(key, defaultValue string) string {
 	}
 	return value
 }
-func getEnvInt(key string, defaultValue int) int {
-	value := os.Getenv(key)
-	if value == "" {
-		return defaultValue
-	}
-	intValue, err := strconv.Atoi(value)
-	if err != nil {
-		return defaultValue
-	}
-	return intValue
-}
 
 func (c *Config) Parse() {
 	parseError := map[string]string{
@@ -107,9 +87,9 @@ func (c *Config) Parse() {
 		HTTP_PORT:     "",
 		HTTP_BASE_URL: "",
 		//!
-		LOGS_FILE: "",
+		LOG_FILE: "",
 		//!
-		REDIS_URL: "",
+		KAFKA_BROKER: "",
 		//!
 		MYSQL_HOST:     "",
 		MYSQL_PORT:     "",
@@ -122,9 +102,9 @@ func (c *Config) Parse() {
 	parseError[HTTP_PORT] = c.Http.Port
 	parseError[HTTP_BASE_URL] = c.Http.Host
 	//! Logger configs
-	parseError[LOGS_FILE] = c.Logger.LogFile
-	//! Redi configs
-	parseError[REDIS_URL] = c.Redis.Url
+	parseError[LOG_FILE] = c.Logger.LogFile
+	//! kafka
+	parseError[KAFKA_BROKER]=c.Kafka.Brokers[0]
 	//! mysql configs
 	parseError[MYSQL_HOST] = c.MySQL.MysqlHost
 	parseError[MYSQL_PORT] = c.MySQL.MysqlPort

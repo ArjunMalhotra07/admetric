@@ -2,7 +2,6 @@ package services
 
 import (
 	"fmt"
-	"log"
 	"time"
 
 	"github.com/ArjunMalhotra/internal/model"
@@ -73,53 +72,4 @@ func ParseTimeframe(timeframe string) (time.Duration, error) {
 	default:
 		return 1 * time.Hour, nil // Default to 1 hour for unknown units
 	}
-}
-
-// GetAnalytics retrieves analytics data for ads within a specified timeframe
-func (s *AdService) GetAnalytics(adID string, timeframe string) (*model.TimeframeAnalytics, error) {
-	// Parse timeframe
-	duration, err := ParseTimeframe(timeframe)
-	if err != nil {
-		log.Printf("Error parsing timeframe: %v", err)
-		duration = 1 * time.Hour // Default to 1 hour
-	}
-
-	endTime := time.Now()
-	startTime := endTime.Add(-duration)
-
-	// If adID is provided, get analytics for that specific ad
-	if adID != "" {
-		if s.cb.IsOpen() {
-			return nil, fmt.Errorf("circuit breaker is open for ad-service")
-		}
-
-		analytics, err := s.metricsRepo.GetAdAnalytics(adID, startTime, endTime)
-		if err != nil {
-			s.cb.RecordFailure()
-			log.Printf("Error getting analytics for ad %s: %v", adID, err)
-			return nil, err
-		}
-
-		s.cb.RecordSuccess()
-		return &model.TimeframeAnalytics{
-			Timeframe: timeframe,
-			Ads:       []model.AdAnalytics{*analytics},
-			Total:     *analytics,
-		}, nil
-	}
-
-	// Otherwise, get analytics for all ads
-	if s.cb.IsOpen() {
-		return nil, fmt.Errorf("circuit breaker is open for ad-service")
-	}
-
-	analytics, err := s.metricsRepo.GetAllAdsAnalytics(startTime, endTime)
-	if err != nil {
-		s.cb.RecordFailure()
-		log.Printf("Error getting analytics for all ads: %v", err)
-		return nil, err
-	}
-
-	s.cb.RecordSuccess()
-	return analytics, nil
 }

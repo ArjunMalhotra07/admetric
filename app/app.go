@@ -12,12 +12,12 @@ import (
 	"github.com/ArjunMalhotra/pkg/db"
 	"github.com/ArjunMalhotra/pkg/http"
 	"github.com/ArjunMalhotra/pkg/logger"
-	"github.com/go-redis/redis"
 )
 
 func Start() {
 	//! config
 	cfg := config.NewConfig()
+	cfg.Parse()
 	//! logger
 	log, _ := logger.NewLogger(cfg)
 	app := http.NewApp(log)
@@ -46,14 +46,6 @@ func Start() {
 			log.Logger.Info("Successfully seeded data")
 		}
 	}
-	//! Redis
-	redisClient := redis.NewClient(&redis.Options{
-		Addr: cfg.Redis.Url,
-	})
-	if _, err := redisClient.Ping().Result(); err != nil {
-		log.Logger.Error("Failed to connect to redis ->  ", err)
-		return
-	}
 	//! Kafka
 	kafkaService, err := services.NewKafkaService(cfg.Kafka.Brokers)
 	if err != nil {
@@ -64,7 +56,7 @@ func Start() {
 	clickRepo := repo.NewClickRepo(db.DB)
 	clickService := services.NewClickService(clickRepo, log, kafkaService)
 	adService := services.NewAdService(adRepo, log)
-	// http API server based on fiber
+	//! Fiber based HTTP server
 	server := server.NewHTTP(cfg, app, log, adService, clickService)
 	//! start http server
 	go func() {
