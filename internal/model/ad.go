@@ -14,5 +14,6 @@ type Ad struct {
 	UpdatedAt time.Time      `gorm:"autoUpdateTime"`
 	DeletedAt gorm.DeletedAt `gorm:"index"`
 	// Adding this is optional but helps with querying
-	Clicks []Click `gorm:"foreignKey:AdID"`
+	Clicks      []Click `gorm:"foreignKey:AdID"`
+	TotalClicks int     `gorm:"total_clicks, not null"`
 }

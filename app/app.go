@@ -1,8 +1,6 @@
 package app
 
 import (
-	"context"
-	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -18,8 +16,6 @@ import (
 )
 
 func Start() {
-	ctx, cancel := context.WithCancel(context.Background())
-	defer cancel()
 	//! config
 	cfg := config.NewConfig()
 	//! logger
@@ -58,15 +54,18 @@ func Start() {
 		log.Logger.Error("Failed to connect to redis ->  ", err)
 		return
 	}
+	//! Kafka
+	kafkaService, err := services.NewKafkaService(cfg.Kafka.Brokers)
+	if err != nil {
+		log.Logger.Errorf("Failed to initialize Kafka: %v", err)
+		return
+	}
+	defer kafkaService.Close()
 	clickRepo := repo.NewClickRepo(db.DB)
-	metricsRepo := repo.NewMetricsRepo(redisClient)
-	clickService := services.NewClickService(clickRepo, metricsRepo, log)
-	adService := services.NewAdService(adRepo)
+	clickService := services.NewClickService(clickRepo, log, kafkaService)
+	adService := services.NewAdService(adRepo, log)
 	// http API server based on fiber
 	server := server.NewHTTP(cfg, app, log, adService, clickService)
-	// Register all APP APIs
-	server.RegisterRoutes()
-
 	//! start http server
 	go func() {
 		err := server.App.Listen(cfg.Http.Host + cfg.Http.Port)
@@ -74,13 +73,13 @@ func Start() {
 			log.Logger.Fatalf("Error trying to listenning on port %s: %v", cfg.Http.Port, err)
 		}
 	}()
-	//!
+	//! Graceful shutdown
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt, syscall.SIGTERM)
-	select {
-	case v := <-quit:
-		fmt.Printf("signal.Notify CTRL+C: %v", v)
-	case done := <-ctx.Done():
-		fmt.Printf("ctx.Done: %v", done)
+	<-quit
+
+	log.Logger.Info("Shutting down server...")
+	if err := server.App.Shutdown(); err != nil {
+		log.Logger.Fatalf("Server forced to shutdown: %v", err)
 	}
 }

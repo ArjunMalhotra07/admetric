@@ -1,20 +1,55 @@
-.PHONY: run
-run:
-	@go run ./cmd/main.go
+.PHONY: build run test clean docker-build docker-run compose
 
-.PHONY: up
-up:
-	@docker compose down
-	@docker compose up --build
+# Go parameters
+GOCMD=go
+GOBUILD=$(GOCMD) build
+GOCLEAN=$(GOCMD) clean
+GOTEST=$(GOCMD) test
+GOGET=$(GOCMD) get
+BINARY_NAME=admetric
+BINARY_UNIX=$(BINARY_NAME)_unix
 
-.PHONY: remove
-remove:
-	@echo "Stopping all running containers..."
-	@docker stop $$(docker ps -q) 2>/dev/null || true
-	@echo "Removing all containers..."
-	@docker rm -f $$(docker ps -aq) 2>/dev/null || true
-	@echo "Done."
+# Docker parameters
+DOCKER_IMAGE=admetric
+DOCKER_TAG=latest
 
-.PHONY: tidy
-tidy:
-	@go mod tidy
+all: test build
+
+build:
+	$(GOBUILD) -o $(BINARY_NAME) -v ./cmd/main.go
+
+run: compose
+	$(GOBUILD) -o $(BINARY_NAME) -v ./cmd/main.go
+	./$(BINARY_NAME)
+
+test:
+	$(GOTEST) -v ./...
+
+clean:
+	$(GOCLEAN)
+	rm -f $(BINARY_NAME)
+	rm -f $(BINARY_UNIX)
+	docker-compose down -v
+	rm -f admetric.log
+
+docker-build:
+	docker build -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
+
+docker-run:
+	docker run -p 8080:8080 $(DOCKER_IMAGE):$(DOCKER_TAG)
+
+docker-compose-up:
+	docker-compose up -d
+
+docker-compose-down:
+	docker-compose down
+
+compose:
+	docker-compose down -v
+	docker-compose up -d
+
+lint:
+	golangci-lint run
+
+deps:
+	$(GOGET) -v -t -d ./...

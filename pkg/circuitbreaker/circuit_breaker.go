@@ -32,6 +32,7 @@ func NewCircuitBreaker(failureThreshold int, resetTimeout time.Duration, name st
 		name:             name,
 	}
 }
+
 func (cb *CircuitBreaker) IsOpen() bool {
 	cb.mutex.RLock()
 	defer cb.mutex.RUnlock()
@@ -54,6 +55,7 @@ func (cb *CircuitBreaker) IsOpen() bool {
 	}
 	return false
 }
+
 func (cb *CircuitBreaker) RecordFailure() {
 	cb.mutex.Lock()
 	defer cb.mutex.Unlock()
@@ -64,6 +66,7 @@ func (cb *CircuitBreaker) RecordFailure() {
 		cb.state = StateOpen // Open the circuit
 	}
 }
+
 func (cb *CircuitBreaker) RecordSuccess() {
 	cb.mutex.Lock()
 	defer cb.mutex.Unlock()

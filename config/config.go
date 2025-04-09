@@ -3,6 +3,7 @@ package config
 import (
 	"fmt"
 	"os"
+	"strconv"
 )
 
 const (
@@ -23,29 +24,14 @@ const (
 )
 
 type Config struct {
-	Http   Http
-	Logger Logger
-	Redis  Redis
-	MySQL  MySQL
+	MySQL  MySQLConfig
+	Redis  RedisConfig
+	Http   HttpConfig
+	Logger LoggerConfig
+	Kafka  KafkaConfig
 }
 
-type Http struct {
-	BaseUrl string
-	Host    string
-	Port    string
-}
-
-type Logger struct {
-	DisableCaller     bool
-	DisableStacktrace bool
-	Encoding          string
-	Level             string
-	LogFile           string
-}
-type Redis struct {
-	Url string
-}
-type MySQL struct {
+type MySQLConfig struct {
 	MysqlHost     string
 	MysqlPort     string
 	MysqlUser     string
@@ -53,15 +39,68 @@ type MySQL struct {
 	MysqlDBName   string
 }
 
+type RedisConfig struct {
+	Url string
+}
+
+type HttpConfig struct {
+	Host string
+	Port string
+}
+
+type LoggerConfig struct {
+	LogFile string
+}
+
+type KafkaConfig struct {
+	Brokers []string
+}
+
 func NewConfig() *Config {
-	http := Http{}
-	logger := Logger{}
-	mysql := MySQL{}
-	c := &Config{
-		Http:   http,
-		Logger: logger,
-		MySQL:  mysql,
+	return &Config{
+		MySQL: MySQLConfig{
+			MysqlHost:     getEnv("MYSQL_HOST", "localhost"),
+			MysqlPort:     getEnv("MYSQL_PORT", "3306"),
+			MysqlUser:     getEnv("MYSQL_USER", "root"),
+			MysqlPassword: getEnv("MYSQL_PASSWORD", ""),
+			MysqlDBName:   getEnv("MYSQL_DB", "admetric"),
+		},
+		Redis: RedisConfig{
+			Url: getEnv("REDIS_URL", "localhost:6379"),
+		},
+		Http: HttpConfig{
+			Host: getEnv("HTTP_HOST", "localhost"),
+			Port: getEnv("HTTP_PORT", ":8080"),
+		},
+		Logger: LoggerConfig{
+			LogFile: getEnv("LOG_FILE", "admetric.log"),
+		},
+		Kafka: KafkaConfig{
+			Brokers: []string{getEnv("KAFKA_BROKER", "localhost:9092")},
+		},
 	}
+}
+
+func getEnv(key, defaultValue string) string {
+	value := os.Getenv(key)
+	if value == "" {
+		return defaultValue
+	}
+	return value
+}
+func getEnvInt(key string, defaultValue int) int {
+	value := os.Getenv(key)
+	if value == "" {
+		return defaultValue
+	}
+	intValue, err := strconv.Atoi(value)
+	if err != nil {
+		return defaultValue
+	}
+	return intValue
+}
+
+func (c *Config) Parse() {
 	parseError := map[string]string{
 		//!
 		HTTP_HOST:     "",
@@ -79,60 +118,19 @@ func NewConfig() *Config {
 		MYSQL_DB:       "",
 	}
 	//! http configs
-	httpHost := os.Getenv(HTTP_HOST)
-	if httpHost != "" {
-		c.Http.Host = httpHost
-		parseError[HTTP_HOST] = httpHost
-	}
-	httpPort := os.Getenv(HTTP_PORT)
-	if httpPort != "" {
-		c.Http.Port = httpPort
-		parseError[HTTP_PORT] = httpPort
-	}
-	httpBaseURL := os.Getenv(HTTP_BASE_URL)
-	if httpBaseURL != "" {
-		c.Http.BaseUrl = httpBaseURL
-		parseError[HTTP_BASE_URL] = httpBaseURL
-	}
+	parseError[HTTP_HOST] = c.Http.Host
+	parseError[HTTP_PORT] = c.Http.Port
+	parseError[HTTP_BASE_URL] = c.Http.Host
 	//! Logger configs
-	logsFile := os.Getenv(LOGS_FILE)
-	if logsFile != "" {
-		c.Logger.LogFile = logsFile
-		parseError[LOGS_FILE] = logsFile
-	}
+	parseError[LOGS_FILE] = c.Logger.LogFile
 	//! Redi configs
-	redisUrl := os.Getenv(REDIS_URL)
-	if redisUrl != "" {
-		c.Redis.Url = redisUrl
-		parseError[REDIS_URL] = redisUrl
-	}
+	parseError[REDIS_URL] = c.Redis.Url
 	//! mysql configs
-	mysqlHost := os.Getenv(MYSQL_HOST)
-	if mysqlHost != "" {
-		c.MySQL.MysqlHost = mysqlHost
-		parseError[MYSQL_HOST] = mysqlHost
-	}
-	mysqlPort := os.Getenv(MYSQL_PORT)
-	if mysqlPort != "" {
-		c.MySQL.MysqlPort = mysqlPort
-		parseError[MYSQL_PORT] = mysqlPort
-
-	}
-	mysqlUser := os.Getenv(MYSQL_USER)
-	if mysqlUser != "" {
-		c.MySQL.MysqlUser = mysqlUser
-		parseError[MYSQL_USER] = mysqlUser
-	}
-	mysqlPassword := os.Getenv(MYSQL_PASSWORD)
-	if mysqlPassword != "" {
-		c.MySQL.MysqlPassword = mysqlPassword
-		parseError[MYSQL_PASSWORD] = mysqlPassword
-	}
-	mysqlDBName := os.Getenv(MYSQL_DB)
-	if mysqlDBName != "" {
-		c.MySQL.MysqlDBName = mysqlDBName
-		parseError[MYSQL_DB] = mysqlDBName
-	}
+	parseError[MYSQL_HOST] = c.MySQL.MysqlHost
+	parseError[MYSQL_PORT] = c.MySQL.MysqlPort
+	parseError[MYSQL_USER] = c.MySQL.MysqlUser
+	parseError[MYSQL_PASSWORD] = c.MySQL.MysqlPassword
+	parseError[MYSQL_DB] = c.MySQL.MysqlDBName
 	//! check all env vars are set
 	exitParse := false
 	for k, v := range parseError {
@@ -144,5 +142,4 @@ func NewConfig() *Config {
 	if exitParse {
 		panic("Env vars not set see list")
 	}
-	return c
 }

@@ -16,8 +16,8 @@ func NewClickRepo(db *gorm.DB) *ClickRepo {
 	return &ClickRepo{DB: db}
 }
 
-func (r *ClickRepo) Save(click model.Click) error {
-	if err := r.DB.Create(&click).Error; err != nil {
+func (r *ClickRepo) SaveBatch(clicks []model.Click) error {
+	if err := r.DB.CreateInBatches(&clicks, 500).Error; err != nil {
 		log.Printf("Failed to save click event: %v", err)
 		return err
 	}
@@ -45,4 +45,17 @@ func (r *ClickRepo) GetClickCountByIP(ip string) (int, error) {
 		return 0, err
 	}
 	return int(count), nil
+}
+func (s *ClickRepo) UpdateAdBatch(adIDs []string, clickCounts map[string]int64) error {
+	tx := s.DB.Begin()
+	for _, adID := range adIDs {
+		count := clickCounts[adID]
+		if err := tx.Model(&model.Ad{}).
+			Where("id = ?", adID).
+			Update("total_clicks", count).Error; err != nil {
+			return err
+		}
+	}
+	tx.Commit()
+	return nil
 }
