@@ -9,7 +9,6 @@ const (
 	//!
 	HTTP_HOST     = "HTTP_HOST"
 	HTTP_PORT     = "HTTP_PORT"
-	HTTP_BASE_URL = "BASE_URL"
 	//!
 	LOG_FILE = "LOG_FILE"
 	//!
@@ -51,32 +50,31 @@ type KafkaConfig struct {
 }
 
 func NewConfig() *Config {
-	return &Config{
+	c := Config{
 		Http: HttpConfig{
-			Host: getEnv(HTTP_HOST, "localhost"),
-			Port: getEnv(HTTP_PORT, ":8080"),
+			Host: getEnv(HTTP_HOST),
+			Port: getEnv(HTTP_PORT),
 		},
 		Logger: LoggerConfig{
-			LogFile: getEnv(LOG_FILE, "admetric.log"),
+			LogFile: getEnv(LOG_FILE),
 		},
 		Kafka: KafkaConfig{
-			Brokers: []string{getEnv(KAFKA_BROKER, "localhost:9092")},
+			Brokers: []string{getEnv(KAFKA_BROKER)},
 		},
 		MySQL: MySQLConfig{
-			MysqlHost:     getEnv(MYSQL_HOST, "localhost"),
-			MysqlPort:     getEnv(MYSQL_PORT, "3306"),
-			MysqlUser:     getEnv(MYSQL_USER, "root"),
-			MysqlPassword: getEnv(MYSQL_PASSWORD, ""),
-			MysqlDBName:   getEnv(MYSQL_DB, "admetric"),
+			MysqlHost:     getEnv(MYSQL_HOST),
+			MysqlPort:     getEnv(MYSQL_PORT),
+			MysqlUser:     getEnv(MYSQL_USER),
+			MysqlPassword: getEnv(MYSQL_PASSWORD),
+			MysqlDBName:   getEnv(MYSQL_DB),
 		},
 	}
+	fmt.Println(c)
+	return &c
 }
 
-func getEnv(key, defaultValue string) string {
+func getEnv(key string) string {
 	value := os.Getenv(key)
-	if value == "" {
-		return defaultValue
-	}
 	return value
 }
 
@@ -85,7 +83,6 @@ func (c *Config) Parse() {
 		//!
 		HTTP_HOST:     "",
 		HTTP_PORT:     "",
-		HTTP_BASE_URL: "",
 		//!
 		LOG_FILE: "",
 		//!
@@ -100,11 +97,10 @@ func (c *Config) Parse() {
 	//! http configs
 	parseError[HTTP_HOST] = c.Http.Host
 	parseError[HTTP_PORT] = c.Http.Port
-	parseError[HTTP_BASE_URL] = c.Http.Host
 	//! Logger configs
 	parseError[LOG_FILE] = c.Logger.LogFile
 	//! kafka
-	parseError[KAFKA_BROKER]=c.Kafka.Brokers[0]
+	parseError[KAFKA_BROKER] = c.Kafka.Brokers[0]
 	//! mysql configs
 	parseError[MYSQL_HOST] = c.MySQL.MysqlHost
 	parseError[MYSQL_PORT] = c.MySQL.MysqlPort

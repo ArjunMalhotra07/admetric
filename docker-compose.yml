@@ -3,19 +3,22 @@ version: '3.8'
 services:
   app:
     build: .
+    container_name: admetric
     ports:
-      - "8080:8080"
+      - "${HTTP_PORT}:8888"
     environment:
-      - MYSQL_HOST=mysql
-      - MYSQL_PORT=3306
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
-      - MYSQL_DB=admetricdb
-      - REDIS_URL=redis:6379
-      - KAFKA_BROKER=kafka:9092
+      - MYSQL_HOST=${MYSQL_HOST}
+      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DB=${MYSQL_DB}
+      - REDIS_URL=${REDIS_URL}
+      - KAFKA_BROKER=${KAFKA_BROKER}
+      - LOG_FILE=${LOG_FILE}
+      - HTTP_HOST=${HTTP_HOST}
+      - HTTP_PORT=${HTTP_PORT}
     depends_on:
       - mysql
-      - redis
       - kafka
 
   mysql:
@@ -66,3 +69,5 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1

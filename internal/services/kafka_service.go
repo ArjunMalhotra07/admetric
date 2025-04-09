@@ -42,8 +42,10 @@ func NewKafkaService(brokers []string) (*KafkaService, error) {
 	var err error
 
 	for i := 0; i < maxRetries; i++ {
+		log.Printf("Attempting to connect to Kafka brokers: %v (attempt %d/%d)", brokers, i+1, maxRetries)
 		producer, err = sarama.NewSyncProducer(brokers, config)
 		if err == nil {
+			log.Printf("Successfully connected to Kafka")
 			break
 		}
 		log.Printf("Failed to connect to Kafka (attempt %d/%d): %v", i+1, maxRetries, err)
@@ -91,17 +93,35 @@ func (s *KafkaService) StartConsumer(clickService *ClickService) error {
 	if err != nil {
 		log.Printf("Warning: Could not create Kafka admin client: %v", err)
 	} else {
+		log.Printf("Creating Kafka topic: %s", clickTopic)
 		err = admin.CreateTopic(clickTopic, &sarama.TopicDetail{
 			NumPartitions:     1,
 			ReplicationFactor: 1,
 		}, false)
-		if err != nil && err != sarama.ErrTopicAlreadyExists {
-			log.Printf("Warning: Could not create topic: %v", err)
+		if err != nil {
+			if err == sarama.ErrTopicAlreadyExists {
+				log.Printf("Topic %s already exists", clickTopic)
+			} else {
+				log.Printf("Warning: Could not create topic: %v", err)
+			}
+		} else {
+			log.Printf("Successfully created topic: %s", clickTopic)
 		}
 		admin.Close()
 	}
 
-	partitionConsumer, err := s.consumer.ConsumePartition(clickTopic, 0, sarama.OffsetNewest)
+	// Get topic partitions
+	partitions, err := s.consumer.Partitions(clickTopic)
+	if err != nil {
+		return fmt.Errorf("failed to get partitions: %v", err)
+	}
+
+	if len(partitions) == 0 {
+		return fmt.Errorf("no partitions found for topic: %s", clickTopic)
+	}
+
+	log.Printf("Starting consumer for topic: %s, partition: %d", clickTopic, partitions[0])
+	partitionConsumer, err := s.consumer.ConsumePartition(clickTopic, partitions[0], sarama.OffsetNewest)
 	if err != nil {
 		return fmt.Errorf("failed to create partition consumer: %v", err)
 	}
@@ -110,6 +130,7 @@ func (s *KafkaService) StartConsumer(clickService *ClickService) error {
 	signal.Notify(signals, os.Interrupt)
 
 	go func() {
+		log.Printf("Consumer started, waiting for messages...")
 		for {
 			select {
 			case msg := <-partitionConsumer.Messages():
@@ -123,6 +144,7 @@ func (s *KafkaService) StartConsumer(clickService *ClickService) error {
 					log.Printf("Failed to process click: %v", err)
 				}
 			case <-signals:
+				log.Printf("Consumer shutting down...")
 				return
 			}
 		}
