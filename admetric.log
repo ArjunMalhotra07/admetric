@@ -17,3 +17,28 @@
 {"level":"error","ts":1744226835.84071,"msg":"Failed to initialize Kafka: failed to create producer: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka: no such host"}
 {"level":"error","ts":1744227174.8471181,"msg":"Failed to initialize Kafka: failed to create producer: kafka: client has run out of available brokers to talk to: dial tcp: lookup kafka: no such host"}
 {"level":"error","ts":1744227491.747645,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744228261.38099,"msg":"Shutting down server..."}
+{"level":"error","ts":1744228296.694433,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744228472.2205172,"msg":"Shutting down server..."}
+{"level":"error","ts":1744228484.999244,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744228653.821654,"msg":"Shutting down server..."}
+{"level":"error","ts":1744228659.158933,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744229517.499964,"msg":"Shutting down server..."}
+{"level":"error","ts":1744229521.579783,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744229560.440376,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231337.141276,"msg":"Failed to load db object"}
+{"level":"error","ts":1744231455.437023,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744231603.1359959,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231609.3241658,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744231658.459039,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231702.537379,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744231741.543445,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231744.10301,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744231745.052203,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231751.072955,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744231758.8049111,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231818.596886,"msg":"Failed to initialize Kafka: failed to create producer after 5 attempts: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744231880.991864,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744231924.028252,"msg":"Shutting down server..."}
+{"level":"error","ts":1744231957.034981,"msg":"Failed to initialize Kafka: failed to create producer after 5 attempts: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744232340.2661839,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}

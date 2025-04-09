@@ -24,6 +24,20 @@ func (r *ClickRepo) SaveBatch(clicks []model.Click) error {
 	return nil
 }
 
+func (r *ClickRepo) UpdateAdTotalClicks(adID string, increment int) error {
+	result := r.DB.Model(&model.Ad{}).
+		Where("id = ?", adID).
+		UpdateColumn("total_clicks", gorm.Expr("total_clicks + ?", increment))
+
+	if result.Error != nil {
+		return result.Error
+	}
+	if result.RowsAffected == 0 {
+		return gorm.ErrRecordNotFound
+	}
+	return nil
+}
+
 func (r *ClickRepo) AdExists(adID string) (bool, error) {
 	var exists bool
 	err := r.DB.Model(&model.Ad{}).
@@ -45,17 +59,4 @@ func (r *ClickRepo) GetClickCountByIP(ip string) (int, error) {
 		return 0, err
 	}
 	return int(count), nil
-}
-func (s *ClickRepo) UpdateAdBatch(adIDs []string, clickCounts map[string]int64) error {
-	tx := s.DB.Begin()
-	for _, adID := range adIDs {
-		count := clickCounts[adID]
-		if err := tx.Model(&model.Ad{}).
-			Where("id = ?", adID).
-			Update("total_clicks", count).Error; err != nil {
-			return err
-		}
-	}
-	tx.Commit()
-	return nil
 }

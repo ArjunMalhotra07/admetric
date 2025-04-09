@@ -91,7 +91,11 @@ func (s *ClickService) processBatch() error {
 	} else {
 		s.cb.RecordSuccess()
 		s.counterMutex.Lock()
+		// Update total clicks in DB for each ad
 		for _, click := range s.currentBatch {
+			if err := s.clickRepo.UpdateAdTotalClicks(click.AdID, 1); err != nil {
+				s.log.Logger.Errorf("Failed to update total clicks for ad %s: %v", click.AdID, err)
+			}
 			s.updateCounter(click)
 		}
 		s.counterMutex.Unlock()

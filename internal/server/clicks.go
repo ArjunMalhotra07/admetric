@@ -40,3 +40,34 @@ func (s *HttpServer) handleRecordClick(c *fiber.Ctx) error {
 		"message": "Click recorded",
 	})
 }
+
+func (s *HttpServer) handleGetClickCount(c *fiber.Ctx) error {
+	adID := c.Params("id")
+	if adID == "" {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Ad ID is required",
+		})
+	}
+
+	// First check if ad exists
+	exists, err := s.ClickService.AdExists(adID)
+	if err != nil {
+		s.Log.Logger.Errorf("Failed to check if ad exists: %v", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Internal server error",
+		})
+	}
+	if !exists {
+		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+			"error": "Ad not found",
+		})
+	}
+
+	// Get click count from in-memory counter
+	count := s.ClickService.GetClickCount(adID)
+
+	return c.JSON(fiber.Map{
+		"ad_id":        adID,
+		"total_clicks": count,
+	})
+}
