@@ -123,14 +123,28 @@ func (s *ClickService) updateCounter(click model.Click) {
 	}
 }
 
-func (s *ClickService) GetClickCount(adID string) int64 {
+func (s *ClickService) GetClickCount(adID string) (int64, error) {
 	s.counterMutex.RLock()
 	defer s.counterMutex.RUnlock()
+
+	// First try to get from in-memory counter
 	id := fmt.Sprintf("ad:%s", adID)
 	if entry, exists := s.counters[id]; exists {
-		return entry.ClickCount
+		return entry.ClickCount, nil
 	}
-	return 0
+
+	// If not in memory, get from database
+	totalClicks, err := s.clickRepo.GetAdTotalClicks(adID)
+	if err != nil {
+		return 0, err
+	}
+
+	// Update in-memory counter for future requests
+	s.counters[id] = &CounterEntry{
+		ClickCount: int64(totalClicks),
+	}
+
+	return int64(totalClicks), nil
 }
 
 func (s *ClickService) AdExists(adID string) (bool, error) {

@@ -38,6 +38,17 @@ func (r *ClickRepo) UpdateAdTotalClicks(adID string, increment int) error {
 	return nil
 }
 
+func (r *ClickRepo) GetAdTotalClicks(adID string) (int, error) {
+	var ad model.Ad
+	if err := r.DB.Select("total_clicks").Where("id = ?", adID).First(&ad).Error; err != nil {
+		if err == gorm.ErrRecordNotFound {
+			return 0, err
+		}
+		return 0, err
+	}
+	return ad.TotalClicks, nil
+}
+
 func (r *ClickRepo) AdExists(adID string) (bool, error) {
 	var exists bool
 	err := r.DB.Model(&model.Ad{}).

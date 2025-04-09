@@ -63,8 +63,14 @@ func (s *HttpServer) handleGetClickCount(c *fiber.Ctx) error {
 		})
 	}
 
-	// Get click count from in-memory counter
-	count := s.ClickService.GetClickCount(adID)
+	// Get click count from in-memory counter or database
+	count, err := s.ClickService.GetClickCount(adID)
+	if err != nil {
+		s.Log.Logger.Errorf("Failed to get click count: %v", err)
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": "Internal server error",
+		})
+	}
 
 	return c.JSON(fiber.Map{
 		"ad_id":        adID,
