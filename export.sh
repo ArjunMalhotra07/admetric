@@ -1,6 +1,6 @@
 export BASE_URL=http://localhost
-export HTTP_HOST=localhost
-export HTTP_PORT=:8080
+export HTTP_HOST=:
+export HTTP_PORT=8888
 
 export LOG_FILE=admetric.log
 
@@ -13,4 +13,3 @@ export MYSQL_PORT=3307
 export MYSQL_DB=admetricdb
 export MYSQL_ROOT_PASSWORD=root
 export MYSQL_DATA=/Users/arjunmalhotra/data/admetric/mysql
-
