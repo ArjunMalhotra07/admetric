@@ -184,6 +184,10 @@ The application uses:
 - `MYSQL_ROOT_PASSWORD`: MySQL root password
 - `MYSQL_DATA`: MySQL data directory
 
+## Workflow
+
+- Additionally a github workflow has been added in the repository which builds the latest image of the application and pushes to the Docker Hub whenever the main branch is pushed to.
+
 ## License
 
 MIT
