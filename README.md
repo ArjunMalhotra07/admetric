@@ -53,6 +53,7 @@ AdMetric is a service for tracking and analyzing ad clicks. It provides APIs for
   ```
 <img width="1512" alt="Screenshot 2025-04-11 at 12 24 26 AM" src="https://github.com/user-attachments/assets/147ecfb7-2427-4881-a53e-fd4c5d7de95a" />
 
+All these ads that are coming in the response body were seeded at the bootup of the application through a json file present in the assets folder that contains data to 10 dummy ads. 
 
 ### 2. Record Click
 
