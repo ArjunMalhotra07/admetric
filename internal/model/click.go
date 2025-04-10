@@ -3,10 +3,10 @@ package model
 import "time"
 
 type Click struct {
-	ID           string    `json:"id" gorm:"primaryKey"`
-	AdID         string    `json:"ad_id" gorm:"not null"`
-	Ad           Ad        `gorm:"foreignKey:AdID;references:ID"` // Proper foreign key
-	IP           string    `json:"ip" gorm:"not null"`
-	PlaybackTime int       `json:"playback_time" gorm:"not null"`
-	Timestamp    time.Time `json:"timestamp" gorm:"not null"`
+    ID           string    `gorm:"type:char(36);primaryKey;column:id" json:"id"`
+    AdID         string    `gorm:"type:char(36);not null;column:ad_id" json:"ad_id"`
+    Ad           Ad        `gorm:"foreignKey:AdID;references:ID"` // No column needed
+    IP           string    `gorm:"type:varchar(45);not null;column:ip" json:"ip"` // Changed to varchar(45)
+    PlaybackTime int       `gorm:"not null;column:playback_time" json:"playback_time"`
+    Timestamp    time.Time `gorm:"not null;column:timestamp" json:"timestamp"`
 }

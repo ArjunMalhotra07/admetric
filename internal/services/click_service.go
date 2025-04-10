@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	batchSize = 100
+	batchSize = 2
 )
 
 type ClickService struct {
@@ -111,7 +111,6 @@ func (s *ClickService) RecordClick(click model.Click) error {
 }
 
 func (s *ClickService) updateCounter(click model.Click) {
-	s.counters["total"].ClickCount += 1
 	adID := fmt.Sprintf("ad:%s", click.AdID)
 	if entry, exists := s.counters[adID]; !exists {
 		s.counters[adID] = &CounterEntry{

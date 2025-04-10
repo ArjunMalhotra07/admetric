@@ -17,7 +17,7 @@ func NewAdRepository(db *gorm.DB) *AdRepo {
 
 func (r *AdRepo) FetchAll() ([]model.Ad, error) {
 	var ads []model.Ad
-	if err := r.db.Find(&ads).Error; err != nil {
+	if err := r.db.Preload("Clicks").Find(&ads).Error; err != nil {
 		return nil, err
 	}
 	return ads, nil
