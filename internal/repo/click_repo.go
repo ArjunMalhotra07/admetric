@@ -67,7 +67,7 @@ func (r *ClickRepo) GetClickCountByTimeFrame(adID string, timeFrame time.Duratio
 func (r *ClickRepo) AdExists(adID string) (bool, error) {
 	var exists bool
 	err := r.DB.Model(&model.Ad{}).
-		Select("count(?) > 0").
+		Select("count(*) > 0").
 		Where("id = ?", adID).
 		Scan(&exists).Error
 
