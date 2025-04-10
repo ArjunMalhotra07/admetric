@@ -120,6 +120,8 @@ You have two options to run the application:
    ```
 3. The application will be available at http://localhost:8888
 
+Note: This option might take 5-10 seconds to completely start the application since mysql container might take some time to come to healthy state.
+
 ### Option 2: Running Locally without App image (Stack.yml file)
 
 1. Run the following command:
