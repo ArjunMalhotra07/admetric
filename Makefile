@@ -8,5 +8,8 @@ remove:
 compose:
 	@docker compose up --build
 
+stack:
+	@docker compose -f stack.yml up --build
+
 client:
 	@go run ./client/click_simulator.go
