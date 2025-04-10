@@ -42,3 +42,955 @@
 {"level":"info","ts":1744231924.028252,"msg":"Shutting down server..."}
 {"level":"error","ts":1744231957.034981,"msg":"Failed to initialize Kafka: failed to create producer after 5 attempts: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
 {"level":"error","ts":1744232340.2661839,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744234739.08147,"msg":"Failed to start Kafka consumer: failed to create partition consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744267693.1194198,"msg":"Shutting down server..."}
+{"level":"info","ts":1744268234.613945,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"info","ts":1744268234.6320052,"msg":"Successfully connected to Kafka"}
+{"level":"info","ts":1744268255.379169,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"info","ts":1744268255.383362,"msg":"Successfully connected to Kafka"}
+{"level":"warn","ts":1744268255.39065,"msg":"Failed to create topic: failed to create topic dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268256.2128608,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268256.21681,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268256.219607,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268261.22486,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268261.23029,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268261.236316,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268266.236912,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268266.24098,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268266.252776,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268271.2488801,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268271.253271,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268271.260638,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268276.259427,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268276.2632809,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268276.271571,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268281.27086,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268281.2797718,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268281.285865,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268286.282468,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268286.2870321,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268286.291353,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268291.297024,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268291.3067222,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268291.314218,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268296.307051,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268296.3110342,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268296.319981,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268301.3192031,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268301.323862,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268301.328035,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268306.326247,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268306.330996,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268306.334568,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268311.3324559,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268311.338418,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268311.3413582,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268316.3409889,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268316.345071,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268316.34949,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268321.348195,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268321.3523479,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268321.357541,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268326.355703,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268326.360341,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268326.366198,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268331.364018,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268331.368763,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268331.372352,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268336.376389,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268336.380553,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268336.3862631,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268341.3878772,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268341.39517,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268341.399157,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268346.3955379,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268346.3994398,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268346.402549,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268351.407207,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268351.411957,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268351.416703,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268356.417087,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268356.422762,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268356.428042,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268361.428801,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268361.4325619,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268361.440691,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268366.4402618,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268366.448101,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268366.455894,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268371.4469109,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268371.4545321,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268371.4613068,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268376.457155,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268376.472411,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268376.483083,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268381.471457,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268381.4787881,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268381.492322,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268386.478668,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268386.4824939,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268386.497473,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268391.488503,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268391.492778,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268391.502111,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268396.498415,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268396.504694,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268396.508476,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268401.512156,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268401.516526,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268401.52208,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268406.524721,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268406.530609,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268406.5398211,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268411.530626,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268411.5348532,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268411.544885,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268416.5442271,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268416.55165,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268416.565603,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268421.552959,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268421.5734138,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268421.57678,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268426.56035,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268426.583186,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268426.588584,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268431.569095,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268431.601325,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268431.6070762,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268436.583071,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268436.6125429,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268436.6181152,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268441.596694,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268441.625985,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268441.6319768,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268446.610097,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268446.639006,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268446.6440058,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268451.619093,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268451.639824,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268451.6459332,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268456.6251972,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268456.6433039,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268456.646674,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744268462.380407,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268463.1371882,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268463.89268,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268468.1330078,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268468.8882828,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268469.6433222,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268473.8878741,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268474.647,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268475.4025578,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268479.642925,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268480.404444,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268481.161391,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268485.3991082,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268486.162583,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268486.920428,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268491.1583219,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268491.920919,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268492.6767201,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268496.9157372,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268497.6757948,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268498.4363241,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268502.6720698,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268503.429767,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268504.1936378,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268508.431581,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268509.185029,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268509.948427,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268514.1934679,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268514.9504352,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268515.7092469,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268519.95254,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268520.711898,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268521.469179,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268525.711185,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268526.4700701,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268527.2245162,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268531.4700348,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268532.226187,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268532.981045,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268537.225701,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268537.982655,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268538.740006,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268542.981618,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268543.741683,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268544.49555,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268548.741317,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268549.497886,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268550.252743,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268554.5038662,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268555.260654,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268556.015125,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268560.262857,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268561.019659,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268561.774522,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268566.0219631,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268566.778965,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268567.5356858,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268571.780662,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268572.535232,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268573.292236,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268577.54251,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268578.305967,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268579.064319,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268583.300951,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268584.06162,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268584.8209522,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268589.059995,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268589.817348,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268590.587311,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268594.8157399,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268595.574741,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268596.344486,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268600.573411,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268601.3309052,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268602.101376,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268606.333733,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268607.088854,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268607.857962,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268612.101344,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268612.8639371,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268613.618217,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268617.857236,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268618.621438,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268619.385997,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268623.6176488,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268624.378193,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268625.142698,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268629.375484,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268630.135224,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268630.90366,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268635.13386,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268635.892885,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268636.6611168,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268640.892103,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268641.649618,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268642.420046,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268646.6503549,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268647.4073029,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268648.178089,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268652.4064882,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268653.1645,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268653.9362502,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268658.163868,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268658.920437,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268659.694205,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268663.9208472,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268664.677193,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268665.45101,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268669.678405,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268670.4345841,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268671.208323,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268675.436188,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268676.192001,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268676.96607,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268681.1958919,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268681.951311,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268682.720839,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268686.953592,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268687.7083719,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268688.477012,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268692.7143161,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268693.468713,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268694.232148,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268698.471136,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268699.227726,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268699.988103,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268704.230242,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268704.9859998,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268705.745913,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268709.988926,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268710.751775,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268711.509928,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268715.747342,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268716.509728,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268717.26619,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268721.504202,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268722.26848,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268723.029879,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268727.263288,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268728.027971,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268728.787787,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268733.021752,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268733.789105,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268734.5433578,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268738.780612,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268739.54778,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268740.306195,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268744.54018,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268745.3092291,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268746.08207,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268750.2985332,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268751.0698082,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268751.842199,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268756.056946,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268756.8264809,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268757.596305,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268761.8144739,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268762.584623,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268763.3519192,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268767.570854,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268768.33986,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268769.108659,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268773.3322098,"msg":"Worker 0: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268774.095687,"msg":"Worker 1: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268774.86553,"msg":"Worker 2: Error from consumer: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"info","ts":1744268776.908245,"msg":"Shutting down server..."}
+{"level":"info","ts":1744268784.162244,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"error","ts":1744268784.921163,"msg":"Failed to connect to Kafka (attempt 1/5): kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"info","ts":1744268786.9222531,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 2 5"}
+{"level":"error","ts":1744268787.67974,"msg":"Failed to connect to Kafka (attempt 2/5): kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"info","ts":1744268789.681385,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 3 5"}
+{"level":"error","ts":1744268790.438667,"msg":"Failed to connect to Kafka (attempt 3/5): kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"info","ts":1744268792.441122,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 4 5"}
+{"level":"error","ts":1744268793.199519,"msg":"Failed to connect to Kafka (attempt 4/5): kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"info","ts":1744268795.200375,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 5 5"}
+{"level":"error","ts":1744268795.958604,"msg":"Failed to connect to Kafka (attempt 5/5): kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"error","ts":1744268797.959955,"msg":"Failed to initialize Kafka: failed to create producer after 5 attempts: kafka: client has run out of available brokers to talk to: dial tcp 127.0.0.1:9092: connect: connection refused"}
+{"level":"info","ts":1744269111.351542,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"info","ts":1744269111.36361,"msg":"Successfully connected to Kafka"}
+{"level":"warn","ts":1744269111.369864,"msg":"Failed to create topic: failed to create topic dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269112.446501,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269112.4509351,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269112.4581618,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269117.459201,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269117.463754,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269117.4698508,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269122.471422,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269122.4765599,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269122.4823658,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269127.482084,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269127.4872692,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269127.490716,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269132.4908102,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269132.493957,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269132.4970748,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269137.497637,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269137.500751,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269137.504004,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269142.509851,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269142.5143402,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269142.522434,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269147.523809,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269147.536542,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269147.542948,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269152.535718,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269152.546304,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269152.553442,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269157.552172,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269157.557312,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269157.565123,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269162.565218,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269162.569063,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269162.575924,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269167.57328,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269167.576216,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269167.5803819,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269172.582994,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269172.588923,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269172.593623,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269177.5959098,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269177.599971,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269177.607593,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269182.6073852,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269182.6133702,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269182.617558,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269187.619534,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269187.624394,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269187.629148,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269192.636698,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269192.641461,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269192.646553,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269197.644948,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269197.649141,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269197.654356,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269202.65774,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269202.6618361,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269202.670295,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269207.668239,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269207.6737862,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269207.678405,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269212.675019,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269212.6811872,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269212.684715,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269217.689139,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269217.6952,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269217.704152,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269222.7038531,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269222.708582,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269222.718231,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269227.717481,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269227.728127,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269227.741167,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269232.727745,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269232.73811,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269232.747073,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269237.736195,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269237.7448409,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269237.753672,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269242.742917,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269242.751404,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269242.761133,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269247.7599921,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269247.764286,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269247.773192,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269252.766318,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269252.770116,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269252.777364,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269257.777619,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269257.7819362,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269257.787593,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269262.785843,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269262.7906759,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269262.7947788,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269267.797388,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269267.801518,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269267.8072672,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269272.8109179,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269272.8230689,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269272.831004,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269277.822036,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269277.8303869,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269277.834222,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269282.832588,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269282.838979,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269282.844092,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269287.846248,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269287.856456,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269287.866133,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269292.859833,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269292.864539,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269292.875884,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269297.8734,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269297.878227,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269297.883167,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269302.883293,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269302.888434,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269302.893132,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269307.893609,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269307.897648,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269307.905479,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269312.9062479,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269312.917762,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269312.9277692,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269317.919897,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269317.9231732,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269317.931691,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269322.931882,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269322.937464,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269322.944022,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269327.943496,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269327.9489799,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269327.955758,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269332.954598,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269332.964363,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269332.969843,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269337.966072,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269337.971495,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269337.978146,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269342.9773061,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269342.981791,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269342.98995,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269347.988935,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269347.99475,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269348.003951,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269353.0009952,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269353.005837,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269353.010111,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269358.014267,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269358.0193548,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269358.02403,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269363.025024,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269363.0305762,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269363.040801,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269368.036674,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269368.045525,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269368.052615,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269373.049215,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269373.053408,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269373.063694,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269378.061455,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269378.065519,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269378.075443,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269383.073045,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269383.078944,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269383.087116,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269388.083362,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269388.0874,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269388.093123,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269393.0935621,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269393.0980082,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269393.106327,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269398.103143,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269398.106165,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269398.112352,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269403.1303182,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269403.134621,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269403.140358,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269408.137962,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269408.141342,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269408.146776,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269413.14557,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269413.1514392,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269413.155526,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269418.156407,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269418.1655328,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269418.1728451,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269423.16847,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269423.179154,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269423.185971,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269428.179053,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269428.1853209,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269428.19151,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269433.186465,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269433.1911628,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269433.196544,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269438.196888,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269438.20653,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269438.2122219,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269443.218265,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269443.232428,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269443.241718,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269448.229214,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269448.246677,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269448.258105,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269453.2451699,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269453.2571461,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269453.2654002,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269458.258576,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269458.2648141,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269458.2726002,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269463.268818,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269463.274915,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269463.282938,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269468.280044,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269468.28605,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269468.290935,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269473.293744,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269473.303665,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269473.308717,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269478.3112361,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269478.317118,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269478.325001,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269483.322475,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269483.332646,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269483.339274,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269488.330695,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269488.345637,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269488.351947,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269493.342178,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269493.356313,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269493.3615701,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269498.354401,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269498.360358,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269498.371547,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269503.362195,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269503.366097,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269503.380265,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269508.372799,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269508.382316,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269508.388368,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269513.390104,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269513.4029021,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269513.407234,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269518.4065049,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269518.416272,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269518.421043,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269523.419349,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269523.424217,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269523.432265,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269528.4315798,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269528.437598,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269528.446592,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269533.441757,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269533.44668,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269533.455633,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269538.452766,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269538.457056,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269538.468414,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269543.462828,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269543.47004,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269543.478624,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269548.470052,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269548.47772,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269548.483715,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269553.480578,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269553.4866931,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269553.491714,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269558.490282,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269558.49409,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269558.508321,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269563.49551,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269563.4993842,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269563.515188,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269568.505899,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269568.512631,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269568.5249689,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269573.5165272,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269573.5281541,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269573.532479,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269578.526295,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269578.5354528,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269578.543608,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269583.556926,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269583.566412,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269583.5701919,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269588.563421,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269588.5740821,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269588.5771148,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269593.5720372,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269593.583301,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269593.5876732,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269598.5811698,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269598.590749,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269598.595252,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269603.612324,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269603.617075,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269603.623004,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269608.625508,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269608.630789,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269608.6386318,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269613.63484,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269613.639838,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269613.644903,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269618.646979,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269618.650966,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269618.6565561,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269623.658066,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269623.662569,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269623.6664472,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269628.6674979,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269628.6765492,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269628.684887,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269633.676223,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269633.681278,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269633.689764,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269638.6833549,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269638.6967528,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269638.704042,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269643.690281,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269643.703284,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269643.7087061,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269648.6989539,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269648.713459,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269648.7225149,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269653.715391,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269653.72649,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269653.739261,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269658.725427,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269658.731214,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269658.744609,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269663.7365608,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269663.743216,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269663.752316,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269668.748364,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269668.753302,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269668.7580001,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269673.7611232,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269673.767551,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269673.7731001,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269678.7721019,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269678.77642,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269678.782283,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269683.782898,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269683.787102,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269683.794008,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269688.788946,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269688.792288,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269688.800405,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269693.796103,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269693.8013482,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269693.8047261,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269698.810782,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269698.813998,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269698.8184378,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269703.826692,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269703.8348422,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269703.8403819,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269708.8396502,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269708.844595,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269708.861335,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269713.8495748,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269713.8543591,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269713.872254,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269718.8625531,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269718.867001,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269718.87808,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269723.870882,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269723.877101,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269723.882473,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269728.884544,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269728.888449,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269728.892173,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269733.8967,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269733.9017348,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269733.908694,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269738.9091241,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269738.913909,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269738.918297,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269743.920293,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269743.926361,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269743.934904,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269748.931512,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269748.936589,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269748.945941,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269753.9444249,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269753.949676,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269753.9552739,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269758.9568498,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269758.9618618,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269758.966542,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269763.967568,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269763.971576,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269763.97893,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269768.980072,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269768.985891,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269768.993794,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269773.986872,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269773.9911501,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269773.9994,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269778.99557,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269779.00132,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269779.005443,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269784.001749,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269784.005446,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269784.0111349,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269789.00977,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269789.013129,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269789.016157,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269794.019263,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269794.024522,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269794.0334668,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269799.024723,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269799.02804,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269799.037604,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269804.0322602,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269804.036472,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269804.042658,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269809.0394912,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269809.042125,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269809.045464,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269814.051672,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269814.061742,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269814.066834,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269819.062109,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269819.067955,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269819.076724,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269824.072706,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269824.0831559,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269824.087873,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269829.086097,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269829.093311,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269829.099016,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269834.098488,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269834.103519,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269834.112461,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269839.109012,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269839.114613,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269839.120893,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269844.120339,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269844.124338,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269844.133114,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269849.131934,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269849.136201,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269849.1456199,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269854.142585,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269854.148184,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269854.1526039,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269859.155242,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269859.1609101,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269859.16694,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269864.165986,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269864.1773188,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269864.1811898,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269869.179054,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269869.182577,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269869.1856692,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269874.186539,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269874.190867,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269874.194722,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269879.193643,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269879.197849,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269879.201256,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269884.203417,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269884.2083719,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269884.214803,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269889.2185001,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269889.223514,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269889.228361,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269894.230551,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269894.236683,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269894.244152,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269899.2422771,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269899.249113,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269899.261218,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269904.258158,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269904.265774,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269904.2693849,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269909.270853,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269909.275638,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269909.28327,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269914.2766678,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269914.2830021,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269914.3044338,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269919.282819,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269919.289852,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269919.310053,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269924.2932081,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269924.300894,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269924.320086,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269929.303361,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269929.30989,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269929.329598,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269934.308991,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269934.3141649,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269934.336448,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269939.316845,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269939.319938,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269939.3415391,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269944.329046,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269944.334232,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269944.3485131,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269949.345112,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269949.351841,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269949.357491,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269954.354892,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269954.358452,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269954.36554,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269959.361082,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269959.364394,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269959.369397,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269964.370712,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269964.37434,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269964.3804789,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269969.38339,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269969.389684,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269969.399394,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269974.392592,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269974.404682,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269974.408716,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269979.4044511,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269979.4102669,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269979.420804,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269984.415584,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269984.421403,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269984.4258602,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269989.426217,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269989.431804,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269989.438842,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269994.435775,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269994.441098,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269994.4462879,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269999.445921,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269999.4501,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744269999.458962,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270004.456746,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270004.460984,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270004.4686122,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270009.4690518,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270009.4723709,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270009.47606,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270014.480306,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270014.485698,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270014.4890912,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270019.4908822,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270019.496835,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270019.504729,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270024.501722,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270024.507984,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270024.5107222,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270029.51001,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270029.5138052,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270029.517577,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270034.5219042,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270034.525655,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270034.5323122,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270039.5321422,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270039.537696,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270039.5450408,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270044.5431738,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270044.554997,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270044.5603998,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270049.552747,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270049.5598478,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270049.564111,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270054.563599,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270054.5692532,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270054.57953,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270059.575233,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270059.580659,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270059.58977,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270064.588341,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270064.5931609,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270064.601067,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270069.598303,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270069.6034749,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270069.609945,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270074.60896,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270074.615511,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270074.62171,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270079.616321,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270079.619596,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270079.6254919,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270084.6281412,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270084.634043,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270084.6430888,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744270087.991991,"msg":"Shutting down server..."}
+{"level":"info","ts":1744270091.981337,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"info","ts":1744270091.987988,"msg":"Successfully connected to Kafka"}
+{"level":"warn","ts":1744270091.996864,"msg":"Failed to create topic: failed to create topic dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270092.0020401,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270092.004993,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270092.007894,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270097.009274,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270097.015583,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270097.020523,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744270097.3499799,"msg":"Shutting down server..."}
+{"level":"info","ts":1744270126.8258839,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"info","ts":1744270126.842421,"msg":"Successfully connected to Kafka"}
+{"level":"warn","ts":1744270126.8548322,"msg":"Failed to create topic: failed to create topic dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270127.93968,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270127.9429061,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270127.945578,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270132.947333,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270132.951735,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270132.956199,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270137.960007,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270137.964535,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270137.975641,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270142.9749491,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270142.980393,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270142.989061,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270147.987058,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270147.9924932,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270148.00104,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270153.001198,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270153.005692,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270153.0108411,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270158.013469,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270158.018293,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270158.022309,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270163.018943,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270163.022198,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270163.0256698,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270168.0272262,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270168.032007,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270168.039883,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270173.0368052,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270173.043332,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270173.046226,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270178.044915,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270178.048497,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270178.052898,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270183.057133,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270183.063751,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270183.068761,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270188.071083,"msg":"Worker 0: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270188.0813491,"msg":"Worker 1: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"error","ts":1744270188.087049,"msg":"Worker 2: Error from consumer: dial tcp: lookup kafka: no such host"}
+{"level":"info","ts":1744270189.146415,"msg":"Shutting down server..."}
+{"level":"info","ts":1744270206.303185,"msg":"Attempting to connect to Kafka brokers: %v (attempt %d/%d)[127.0.0.1:9092] 1 5"}
+{"level":"info","ts":1744270206.314979,"msg":"Successfully connected to Kafka"}
+{"level":"info","ts":1744270210.298584,"msg":"Worker 1: Consumer group setup"}

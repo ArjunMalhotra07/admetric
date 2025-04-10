@@ -44,7 +44,7 @@ func NewClickService(clickRepo *repo.ClickRepo, log *logger.Logger, kafka *Kafka
 	}
 
 	// Start Kafka consumer
-	if err := service.kafka.StartConsumer(service); err != nil {
+	if err := kafka.StartConsumer(service, 3); err != nil {
 		log.Logger.Errorf("Failed to start Kafka consumer: %v", err)
 	}
 

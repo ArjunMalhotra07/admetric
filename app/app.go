@@ -47,7 +47,7 @@ func Start() {
 		}
 	}
 	//! Kafka
-	kafkaService, err := services.NewKafkaService(cfg.Kafka.Brokers)
+	kafkaService, err := services.NewKafkaService(cfg.Kafka.Brokers, log)
 	if err != nil {
 		log.Logger.Errorf("Failed to initialize Kafka: %v", err)
 		return
