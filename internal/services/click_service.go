@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	batchSize = 2
+	batchSize = 100
 )
 
 type ClickService struct {
@@ -26,6 +26,7 @@ type ClickService struct {
 	batchMutex   sync.Mutex
 	counterMutex sync.RWMutex
 	currentBatch []model.Click
+	processedIDs sync.Map // Track processed click IDs
 }
 
 type CounterEntry struct {
@@ -52,6 +53,20 @@ func NewClickService(clickRepo *repo.ClickRepo, log *logger.Logger, kafka *Kafka
 }
 
 func (s *ClickService) ProcessClick(click model.Click) error {
+	// Check if we've already processed this click
+	if _, exists := s.processedIDs.LoadOrStore(click.ID, time.Now()); exists {
+		s.log.Logger.Debugf("Skipping duplicate click ID: %s", click.ID)
+		return nil
+	}
+
+	// Update counters immediately for real-time stats
+	s.updateCounter(click)
+
+	// Update database counter immediately for accurate counts
+	if err := s.clickRepo.UpdateAdTotalClicks(click.AdID, 1); err != nil {
+		s.log.Logger.Errorf("Failed to update total clicks for ad %s: %v", click.AdID, err)
+	}
+
 	s.batchMutex.Lock()
 	defer s.batchMutex.Unlock()
 
@@ -81,6 +96,12 @@ func (s *ClickService) processBatch() error {
 	// Try database batch insert
 	err := s.clickRepo.SaveBatch(s.currentBatch)
 	if err != nil {
+		if err == gorm.ErrDuplicatedKey {
+			// Handle duplicate entries gracefully
+			s.log.Logger.Warnf("Duplicate entries in batch, skipping: %v", err)
+			s.currentBatch = s.currentBatch[:0]
+			return nil
+		}
 		s.log.Logger.Errorf("Failed to store batch in database: %v", err)
 		s.cb.RecordFailure()
 		// Republish to Kafka for retry
@@ -91,17 +112,9 @@ func (s *ClickService) processBatch() error {
 		}
 	} else {
 		s.cb.RecordSuccess()
-		s.counterMutex.Lock()
-		// Update total clicks in DB for each ad
-		for _, click := range s.currentBatch {
-			if err := s.clickRepo.UpdateAdTotalClicks(click.AdID, 1); err != nil {
-				s.log.Logger.Errorf("Failed to update total clicks for ad %s: %v", click.AdID, err)
-			}
-			s.updateCounter(click)
-		}
-		s.counterMutex.Unlock()
 	}
 
+	// Clear the batch
 	s.currentBatch = s.currentBatch[:0]
 	return nil
 }
@@ -112,6 +125,10 @@ func (s *ClickService) RecordClick(click model.Click) error {
 
 func (s *ClickService) updateCounter(click model.Click) {
 	adID := fmt.Sprintf("ad:%s", click.AdID)
+
+	s.counterMutex.Lock()
+	defer s.counterMutex.Unlock()
+
 	if entry, exists := s.counters[adID]; !exists {
 		s.counters[adID] = &CounterEntry{
 			ClickCount: 1,

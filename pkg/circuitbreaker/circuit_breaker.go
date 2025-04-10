@@ -35,12 +35,10 @@ func NewCircuitBreaker(failureThreshold int, resetTimeout time.Duration, name st
 
 func (cb *CircuitBreaker) IsOpen() bool {
 	cb.mutex.RLock()
-	defer cb.mutex.RUnlock()
 	// If circuit is open, check if it's time to try again
 	if cb.state == StateOpen {
 		if time.Since(cb.lastFailure) > cb.resetTimeout {
-			// We've waited long enough, move to half-open state
-			// Using a read lock so we need to copy and reacquire with write lock
+			// We need to upgrade to write lock
 			cb.mutex.RUnlock()
 			cb.mutex.Lock()
 			defer cb.mutex.Unlock()
@@ -51,8 +49,10 @@ func (cb *CircuitBreaker) IsOpen() bool {
 			}
 			return true
 		}
+		cb.mutex.RUnlock()
 		return true
 	}
+	cb.mutex.RUnlock()
 	return false
 }
 
