@@ -23,6 +23,6 @@ func NewHTTP(cfg *config.Config, app *http.App, log *logger.Logger, adService *s
 		AdService:    adService,
 		ClickService: clickService,
 	}
-	server.RegisterHttpRoutes()
+	server.RegisterRoutes()
 	return server
 }
