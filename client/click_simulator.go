@@ -40,6 +40,9 @@ func main() {
 	clicksSent := 0
 	batchCount := 0
 
+	// Track clicks per ID
+	clicksPerID := make(map[string]int)
+
 	fmt.Printf("Starting click simulation. Target: %d clicks in batches of %d\n", totalClicks, batchSize)
 
 	// Continue until we reach the target number of clicks
@@ -65,6 +68,7 @@ func main() {
 				fmt.Printf("Error sending click for ad %s: %v\n", adID, err)
 			} else {
 				clicksSent++
+				clicksPerID[adID]++
 				fmt.Printf("Click sent for ad %s (%d/%d)\n", adID, clicksSent, totalClicks)
 			}
 
@@ -79,7 +83,13 @@ func main() {
 		}
 	}
 
+	// Print summary of clicks per ID
 	fmt.Printf("\nClick simulation completed. Sent %d clicks.\n", clicksSent)
+	fmt.Println("\nSummary of clicks per ID:")
+	for id := 1; id <= 10; id++ {
+		idStr := fmt.Sprintf("%d", id)
+		fmt.Printf("Ad ID %s: %d clicks\n", idStr, clicksPerID[idStr])
+	}
 }
 
 // sendClick sends a click request to the server
