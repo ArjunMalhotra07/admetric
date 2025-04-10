@@ -1,7 +1,6 @@
 package server
 
 import (
-	"fmt"
 	"time"
 
 	"github.com/ArjunMalhotra/internal/model"
@@ -32,7 +31,6 @@ func (s *HttpServer) handleRecordClick(c *fiber.Ctx) error {
 	click.ID = uuid.New().String()
 	click.IP = c.IP()
 	click.Timestamp = time.Now()
-	fmt.Println(click)
 	//! Async processing - don't wait for this to complete
 	go func() {
 		if err := s.ClickService.RecordClick(click); err != nil {
