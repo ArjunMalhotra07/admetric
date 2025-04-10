@@ -2,7 +2,7 @@ export BASE_URL=http://localhost
 export HTTP_HOST=:
 export HTTP_PORT=8888
 
-export LOG_FILE=admetric.log
+export LOG_FILE=logs/admetric.log
 
 export KAFKA_BROKER=127.0.0.1:9092
 

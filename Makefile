@@ -10,3 +10,6 @@ remove:
 
 stack:
 	@docker compose -f stack-compose.yml up --build
+
+compose:
+	@docker compose up --build
