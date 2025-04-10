@@ -51,6 +51,8 @@ AdMetric is a service for tracking and analyzing ad clicks. It provides APIs for
       }
   ]
   ```
+<img width="1512" alt="Screenshot 2025-04-11 at 12 24 26 AM" src="https://github.com/user-attachments/assets/147ecfb7-2427-4881-a53e-fd4c5d7de95a" />
+
 
 ### 2. Record Click
 
@@ -72,6 +74,7 @@ AdMetric is a service for tracking and analyzing ad clicks. It provides APIs for
   }
   ```
 - **Status Code**: 202 Accepted
+<img width="1512" alt="Screenshot 2025-04-11 at 12 24 23 AM" src="https://github.com/user-attachments/assets/c2c81c20-f392-46bb-83a6-26e53b4ba3d0" />
 
 ### 3. Get Click Count
 
@@ -87,6 +90,7 @@ AdMetric is a service for tracking and analyzing ad clicks. It provides APIs for
       "total_clicks": 1
    }
   ```
+<img width="1512" alt="Screenshot 2025-04-11 at 12 24 28 AM" src="https://github.com/user-attachments/assets/02695d9d-7fa2-47da-be8b-258f1b8db78f" />
 
 ### 4. Get Click Analytics
 
@@ -106,6 +110,7 @@ AdMetric is a service for tracking and analyzing ad clicks. It provides APIs for
       "timeframe": "7d"
    }
   ```
+<img width="1512" alt="Screenshot 2025-04-11 at 12 24 33 AM" src="https://github.com/user-attachments/assets/75b2c613-d506-4aaf-b6a0-aee3a17d3ab3" />
 
 ## Running the Application
 
